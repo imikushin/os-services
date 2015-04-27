@@ -4,6 +4,7 @@ console:
   links:
   - cloud-init
   labels:
+  - io.rancher.os.remove=false
   - io.rancher.os.scope=system
   volumes_from:
   - all-volumes
