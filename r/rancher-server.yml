@@ -1,6 +1,5 @@
 rancher-state:
-  image: busybox
-  command: true
+  image: rancher/server:latest
   labels:
   - io.rancher.os.createonly=true
   - io.rancher.os.remove=false
