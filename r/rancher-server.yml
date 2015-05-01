@@ -1,5 +1,17 @@
+rancher-state:
+  image: busybox
+  command: true
+  labels:
+  - io.rancher.os.createonly=true
+  - io.rancher.os.remove=false
+  volumes:
+  - /var/lib/cattle
+  - /var/lib/mysql
+
 rancherserver:
   image: rancher/server:latest
   restart: always
+  volumes_from:
+  - rancher-state
   ports:
-  - "8080:8080"
+  - 8080:8080
